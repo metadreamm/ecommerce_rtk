@@ -1,5 +1,8 @@
 import React from 'react';
 import './ProductList.css'; 
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { addItemToCart } from './CartSlice';
 
 const ProductList = () => {
 
@@ -8,6 +11,9 @@ const ProductList = () => {
     { id: 2, name: 'Product B', price: 75 },
     { id: 3, name: 'Product C', price: 30 },
   ];
+
+  const dispatch = useDispatch();
+  const [disabledProducts, setDisabledProducts] = useState([]);
 
   return (
     <div className="product-list">
